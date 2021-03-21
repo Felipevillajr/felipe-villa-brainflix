@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import VideoDetails from '../assets/Data/video-details.json'
 
 
 class Comments extends Component {
@@ -25,7 +24,7 @@ class Comments extends Component {
             
         </div>
         <div id="comment__submission">
-        {VideoDetails[0].comments.map((comment, i) => {
+        {this.props.currentVideo.comments.map((comment, i) => {
                 return (
                     <div className='comment__section2'>
                     <div className="userimg" ></div>

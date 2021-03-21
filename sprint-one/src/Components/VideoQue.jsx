@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
-import Videos from "../assets/Data/video-details.json";
+
+
+
+
+
+
 
 export default class VideoQue extends Component {
-    render() {
 
-        
-        
+    render() {
+        console.log(this.props.quedVideos)
         return (
             
         <section className='video__que__section'>
-            <div onClick='' className="video__que__nextVideo">NEXT VIDEO</div>
+            <div className="video__que__nextVideo">NEXT VIDEO</div>
 
-            {Videos.map((videoQue, i)=> {
+            {this.props.quedVideos.filter((videos)=> videos.id !== this.props.currentVideo.id).map((videoQue)=> { 
                 
                 return (
                     <table>
+                        
                         <tr className='video__que__lineup'>
                             <td>
                                 <img className='video__que__thumb' src={videoQue.image} alt={videoQue.title}/>
@@ -26,6 +31,7 @@ export default class VideoQue extends Component {
                             </div>
                             </td>
                         </tr>
+                        
                     </table>
                     )
             })}
