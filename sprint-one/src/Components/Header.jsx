@@ -8,8 +8,8 @@ function Header() {
                 <img id="logo" src={Logo} alt="BrainFlix Logo"/>
             </div>
             <div className="header__searchbar">
-                <input id="searchBar" type="text" placeholder="Search"/>
                 <div id="searchIcon" ></div>
+                <input id="searchBar" type="text" placeholder="Search" />
             </div> 
             <div className="header__upload--btn">
                 <button id='upload--btn' type="button" name="button">UPLOAD</button>

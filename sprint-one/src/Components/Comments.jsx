@@ -3,8 +3,12 @@ import React, { Component } from 'react';
 
 class Comments extends Component {
 
-    // onSubmit={}
+    
+
     render() {
+        function handleSubmit(e){
+        e.preventDefault();
+    }
         return (
             <>
             <section className="comment__section">
@@ -15,7 +19,7 @@ class Comments extends Component {
                 <textarea id="textarea" type="textarea"  name="textarea" placeholder='Add a comment' ></textarea>
             </fieldset>
             <div  className="comment__section--button" >
-                <button type="submit"className="comment__section--button--here" name="submit">COMMENT</button>
+                <button onClick={handleSubmit} type="submit"className="comment__section--button--here" name="submit">COMMENT</button>
                 </div>
         </form>
         </section>
@@ -24,7 +28,7 @@ class Comments extends Component {
             
         </div>
         <div id="comment__submission">
-        {this.props.currentVideo.comments.map((comment, i) => {
+        {this.props.currentVideo.comments.map((comment) => {
                 return (
                     <div className='comment__section2'>
                     <div className="userimg" ></div>

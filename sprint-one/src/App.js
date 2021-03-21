@@ -15,13 +15,20 @@ import VideoDetails from './assets/Data/video-details.json';
 export class App extends React.Component {
   state = {
     currentVideo: VideoDetails[0],
-    quedVideos: VideoDetails,
+    quedVideos: [...VideoDetails]
   }
 
-  changeVideo(Video) {
-    this.setState({Video})
-  }
+  handleChange(e, index){
+        this.setState({
+            currentVideo: e, index,
+        })
+}
 
+  nextVideo(e, index){
+      this.setState({
+        currentVideo: e, index,
+      })
+  }
 
   render() {
       return (
@@ -30,7 +37,7 @@ export class App extends React.Component {
   <Videos currentVideo = {this.state.currentVideo} > </Videos>
   <VideoDes currentVideo = {this.state.currentVideo}></VideoDes>
   <Comments currentVideo = {this.state.currentVideo} ></Comments>
-  <VideoQue changeVideo={this.changeVideo.bind(this)} currentVideo={this.state.currentVideo} quedVideos= {this.state.quedVideos}></VideoQue>  
+  <VideoQue handleChange={this.handleChange.bind(this)} currentVideo={this.state.currentVideo} quedVideos= {this.state.quedVideos}></VideoQue>  
 </div>
       )
   }

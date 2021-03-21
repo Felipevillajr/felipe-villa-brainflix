@@ -6,7 +6,8 @@ export class Videos extends Component {
         return (
             <div className='video'>
                 <div className='video__player'>
-                    <video id='video__player--bg' width="100%" height='auto' loop poster={this.props.currentVideo.image} objectFit='cover' controls>
+                    <video id='video__player--bg' poster={this.props.currentVideo.image} objectFit='cover' controls>
+                        <source src='' />
                         VIDEO NOT SUPPORTED BY BROWSER
                     </video>
                         </div>
