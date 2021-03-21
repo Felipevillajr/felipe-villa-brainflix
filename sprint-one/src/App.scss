@@ -19,8 +19,9 @@ width: 100%;
 height: 169px;
 
   @include for-tablet {
-    @include displaytool(space-between, center, row);
+    @include displaytool(space-around, center, row);
     height: 80px;
+    margin: 0px 10px
   }
 
 
@@ -31,8 +32,7 @@ height: 169px;
     padding: 10px 0px;
 
     @include for-tablet {
-      width: 50%;
-      margin-left: 24px;
+      width: 200px;
       padding: 0px;
     }
   }
@@ -45,7 +45,8 @@ height: 169px;
   width: auto;
   height: 29px;
   @include for-tablet {
-    margin-right: 169px;
+    height: 26px;
+    margin-right: 16vw;
   }
 }
 
@@ -57,7 +58,7 @@ height: 169px;
   overflow: hidden;
 
   @include for-tablet{
-
+    width: 200px;
   }
 
 }
@@ -72,7 +73,9 @@ height: 169px;
   z-index: 9;
   left: 6vw;
   @include for-tablet {
-    left: 48vw;
+    left: 45vw;
+    width: 20px;
+    height: 20px;
 
   }
 }
@@ -88,6 +91,11 @@ height: 169px;
   color: $p_text;
   z-index: 0;
   border-radius: 4px;
+  @include for-tablet {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 6vw;
+  }
 }
 
 #searchBar:focus {
@@ -109,6 +117,15 @@ height: 169px;
   color: $allWhite;
   font-size: 1em;
   z-index: 0;
+  @include for-tablet{
+    position: relative;
+    right: 8vw;
+    bottom: .5vw;
+    width: 115px;
+    margin-left: 0px;
+    padding-right: 10px;
+    padding-top: 1.5px;
+  }
 }
 
 #uploadBtnIcon {
@@ -121,6 +138,12 @@ height: 169px;
   z-index: 9;
   left: 84px;
   top: 126px;
+  @include for-tablet{
+    width: 19px;
+    height: 19px;
+    left: 74vw;
+    top: 29px;
+  }
 }
 
 #upload--btn:focus {
@@ -143,54 +166,101 @@ height: 169px;
   position: absolute;
   left: 257px;
   top: 112px;
+  @include for-tablet {
+    left: 90vw;
+    top: 15px;
+  }
 }
 
 // video section
+
+.video__player {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  width: 100%;
+}
 
 #video__player--bg {
 width: 100%;
 height: 70vw;
 object-fit: cover;
+@include for-tablet {
+  width: 700px;
+  height: 400px;
+}
 }
 
 
 // Active Description lives here 
 
-.video__section {
-  margin: 0 16px;
+.video__section--table {
+  @include displaytool(flex-start,flex-start, column);
+  width: 100%;
+  text-align: left;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid $textFieldBorder;
+
+    @include for-tablet {
+      @include displaytool(space-between, center, row);
+      padding-bottom: 10px;
+    }
 }
 
-.video__section--title {
+.video__section {
+  margin: 0 16px;
+  @include for-tablet {
+    margin: 0 24px;
+  }
+
+  &--title {
   color: $p_text;
   margin-top: 32px;
   margin-bottom: 16px;
-}
+    @include for-tablet {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      font-size: 2.3em;
+    }
+  }
 
-.video__section--user__name {
-  color: $p_text;
-  font-size: 1em;
-  font-weight: 300;
+  &--user__name {
+    color: $p_text;
+    font-size: 1em;
+    font-weight: 300;
+    width: 6rem;
+  }
+
+  &--date {
+    font-size: 1em;
+    color: $textLabelstyle;
+  }
+
+  &--views__container {
   width: 6rem;
 }
-
-.video__section--date {
-  font-size: 1em;
-  color: $textLabelstyle;
-}
-
-.video__section--views__container {
-  width: 6rem;
 }
 
 #views__img {
   position: relative;
   top: 20px;
+    @include for-tablet {
+      top: 5px;
+      right: 10px;
+    }
 }
 
 .video__section--views {
   margin-left: 2rem;
-  font-size: .9rem
+  font-size: .9rem;
+    @include for-tablet{
+      position: relative;
+      bottom: 17px;
+      right: 10px;
+    }
 }
+
 
 .video__section--likes__container {
   position: relative;
@@ -201,22 +271,24 @@ object-fit: cover;
 .video__section--likes {
   margin-left: 2rem;
   font-size: .9rem;
+  @include for-tablet{
+    position: relative;
+    bottom: 17px;
+    right: 10px;
+  }
 }
 
 #likes__img {
   position: relative;
   top: 20px;
   left: 8px;
+  @include for-tablet{
+    top: 4px;
+    left: 0;
+    right: 25px;
+  }
 }
 
-.video__section--table {
-  @include displaytool(flex-start,flex-start, column);
-  width: 100%;
-  text-align: left;
-  padding-bottom: 24px;
-  margin-bottom: 24px;
-  border-bottom: 2px solid $textFieldBorder;
-}
 
 .video__section--description {
   color: $p_text;
@@ -224,12 +296,23 @@ object-fit: cover;
   margin-bottom: 40px;
   line-height: 1.5;
   width: 287px;
+
+  @include for-tablet {
+    width: 499px;
+    font-size: 1em;
+    margin-bottom: 60px;
+    margin-top: 40px;
+  }
 }
 
 .video__section--comment__count {
   color: $p_text;
   font-weight: 300;
   margin-bottom: 32px;
+  @include for-tablet {
+    margin-bottom: 42px;
+    font-size: 1.2em;
+  }
 }
 
 // form section styling lives here
@@ -237,6 +320,9 @@ object-fit: cover;
 .comment--form__fieldset {
   border: none;
   @include displaytool(center,center,column);
+    @include for-tablet {
+      @include displaytool(flex-start, flex-start, row);
+    }
 }
 
 #comment--form__img {
@@ -249,6 +335,11 @@ object-fit: cover;
   height: 48px;
   width: 48px;
   border-radius: 50%;
+    @include for-tablet {
+      top: 6px;
+      right: 0;
+      left: 24px;
+    }
 }
 
 
@@ -262,6 +353,10 @@ object-fit: cover;
   position: relative;
   left: 13px;
   bottom: 40px;
+    @include for-tablet {
+      left: 40px;
+      bottom: 13px;
+    }
 }
 
 
@@ -270,7 +365,7 @@ object-fit: cover;
   border: 2px solid $textFieldBorder;
   position: relative;
   bottom: 35px;
-  left: 29px;
+  margin-left: 17vw;
   width: 200px;
   height: 70px;
   padding: 12px 10px;
@@ -280,6 +375,15 @@ object-fit: cover;
   line-height: 1.5;
   word-wrap: wrap;
   overflow: hidden;
+    @include for-tablet {
+      margin-left: 0px;
+      width: 440px;
+      height: 22px;
+      bottom: 0;
+      top: 6px;
+      right: 147px;
+
+    }
 }
 
 #textarea:focus {
@@ -308,6 +412,11 @@ object-fit: cover;
   border-collapse: separate;
   overflow: hidden;
   perspective: 1px;
+    @include for-tablet {
+      bottom: 60px;
+      left: 35vw;
+      width: 150px;
+    }
 }
 
 .comment__section--button--here:hover {
@@ -384,19 +493,23 @@ object-fit: cover;
   position: relative;
   bottom: 53px;
   font-weight: normal;
+  @include for-tablet {
+    justify-content: flex-start;
+    width: 50%;
+    left: 25vw;
+  }
 }
 
 // video que section lives here
-
-.video__que {
-
-  
-}
 
 
 .video__que__section {
   margin: 0px 16px;
   margin-bottom: 10px;
+    @include for-tablet {
+      margin: 0px 24px;
+      margin-bottom: 20px;
+    }
 }
 
 .video__que__nextVideo {
@@ -426,13 +539,16 @@ object-fit: cover;
   width: 150px;
   font-size: .9em;
   font-weight: 300;
-  // margin-bottom: 6px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box !important;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   white-space: normal;
+    @include for-tablet {
+      font-size: 1em;
+      width: 200px;
+    }
 }
 
 .video__que__side--user {

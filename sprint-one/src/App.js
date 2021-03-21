@@ -19,16 +19,11 @@ export class App extends React.Component {
   }
 
   handleChange(e, index){
-        this.setState({
-            currentVideo: e, index,
-        })
+    this.setState({
+        currentVideo: e, index,
+    })
 }
 
-  nextVideo(e, index){
-      this.setState({
-        currentVideo: e, index,
-      })
-  }
 
   render() {
       return (
