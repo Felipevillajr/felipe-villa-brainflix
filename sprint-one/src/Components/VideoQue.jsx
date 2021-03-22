@@ -20,7 +20,7 @@ export default class VideoQue extends Component {
                 
                 return (
                     <table>
-                        <tr className='video__que__lineup'>
+                        <tr className='video__que__lineup' key= {index}>
                             <td>
                                 <img onClick={()=>{this.props.handleChange(videoQue, index)}} className='video__que__thumb' src={videoQue.image} alt={videoQue.title}/>
                             </td>

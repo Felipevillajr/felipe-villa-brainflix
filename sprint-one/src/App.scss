@@ -23,6 +23,11 @@ height: 169px;
     height: 80px;
     margin: 0px 10px
   }
+  
+  @include for-desktop {
+    margin: 0px 0px;
+    overflow: hidden;
+  }
 
 
   &__logo {
@@ -48,6 +53,9 @@ height: 169px;
     height: 26px;
     margin-right: 16vw;
   }
+  @include for-desktop {
+    margin-right: 24vw;
+  }
 }
 
 // search bar lives here
@@ -57,10 +65,17 @@ height: 169px;
   width: 100%;
   overflow: hidden;
 
-  @include for-tablet{
-    width: 200px;
-  }
+    @include for-tablet{
+      position:absolute;
+      width: 200px;
+    }
 
+    @include for-desktop {
+      position:absolute;
+      overflow: visible;
+      width: auto;
+      left: 42vw;
+    }
 }
 
 #searchIcon {
@@ -72,12 +87,18 @@ height: 169px;
   position: absolute;
   z-index: 9;
   left: 6vw;
-  @include for-tablet {
-    left: 45vw;
-    width: 20px;
-    height: 20px;
-
-  }
+    @include for-tablet {
+      position: relative;
+      left: 3vw;
+      width: 22px;
+      height: 22px;
+    }
+    @include for-desktop {
+      position: relative;
+      left: 10vw;
+      width: 20px;
+      height: 20px;
+    }
 }
 
 #searchBar {
@@ -91,11 +112,17 @@ height: 169px;
   color: $p_text;
   z-index: 0;
   border-radius: 4px;
-  @include for-tablet {
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 6vw;
-  }
+    @include for-tablet {
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-left: 3vw;
+    }
+    @include for-desktop {
+      position: relative;
+      left: 8vw;
+      width: 250px;
+      padding-left: 2rem;
+    }
 }
 
 #searchBar:focus {
@@ -103,6 +130,7 @@ height: 169px;
 }
 
 // upload button lives here
+
 
 #upload--btn {
   width: 225px;
@@ -119,12 +147,19 @@ height: 169px;
   z-index: 0;
   @include for-tablet{
     position: relative;
-    right: 8vw;
+    right: 3vw;
     bottom: .5vw;
     width: 115px;
     margin-left: 0px;
     padding-right: 10px;
     padding-top: 1.5px;
+  }
+  @include for-desktop {
+    position: absolute;
+    bottom: 0;
+    right: 18vw;
+    top: 8px;
+    font-size: .9em;
   }
 }
 
@@ -141,8 +176,16 @@ height: 169px;
   @include for-tablet{
     width: 19px;
     height: 19px;
-    left: 74vw;
+    left: 70vw;
     top: 29px;
+  }
+  @include for-desktop {
+    position: relative;
+    margin-right: 100px;
+    left: 0;
+    top: 0;
+    height: 14px;
+    width: 14px;
   }
 }
 
@@ -170,6 +213,9 @@ height: 169px;
     left: 90vw;
     top: 15px;
   }
+  @include for-tablet {
+    left: 84vw;
+  }
 }
 
 // video section
@@ -188,6 +234,11 @@ object-fit: cover;
 @include for-tablet {
   width: 700px;
   height: 400px;
+}
+@include for-desktop {
+  width: 944px;
+  height: 540px;
+  object-fit: contain;
 }
 }
 
@@ -212,6 +263,10 @@ object-fit: cover;
   margin: 0 16px;
   @include for-tablet {
     margin: 0 24px;
+  }
+  @include for-desktop {
+    width: 55%;
+    margin: 0 180px;
   }
 
   &--title {
@@ -249,6 +304,9 @@ object-fit: cover;
       top: 5px;
       right: 10px;
     }
+    @include for-desktop {
+      right: 210px;
+    }
 }
 
 .video__section--views {
@@ -259,6 +317,9 @@ object-fit: cover;
       bottom: 17px;
       right: 10px;
     }
+    @include for-desktop {
+      right: 210px;
+    }
 }
 
 
@@ -266,6 +327,11 @@ object-fit: cover;
   position: relative;
   left: 20px;
   width: 6rem;
+  @include for-desktop {
+    position: absolute;
+    left: 800px;
+    top: 717px;
+  }
 }
 
 .video__section--likes {
@@ -286,6 +352,9 @@ object-fit: cover;
     top: 4px;
     left: 0;
     right: 25px;
+  }
+  @include for-desktop {
+    margin-right: 0px;
   }
 }
 
@@ -322,6 +391,9 @@ object-fit: cover;
   @include displaytool(center,center,column);
     @include for-tablet {
       @include displaytool(flex-start, flex-start, row);
+    }
+    @include for-desktop{
+      margin: 0 155px;
     }
 }
 
@@ -382,7 +454,6 @@ object-fit: cover;
       bottom: 0;
       top: 6px;
       right: 147px;
-
     }
 }
 
@@ -416,6 +487,10 @@ object-fit: cover;
       bottom: 60px;
       left: 35vw;
       width: 150px;
+    }
+    @include for-desktop {
+      left: 6vw;
+      font-size: .9em;
     }
 }
 
@@ -451,6 +526,10 @@ object-fit: cover;
   margin-left: 16px;
   color: $p_text;
   font-size: .9em;
+  @include for-desktop {
+    width: 55%;
+    margin: 0px 180px;
+  }
 }
 
 .userimg {
@@ -498,6 +577,9 @@ object-fit: cover;
     width: 50%;
     left: 25vw;
   }
+  @include for-desktop {
+    left: 13vw;
+  }
 }
 
 // video que section lives here
@@ -509,6 +591,20 @@ object-fit: cover;
     @include for-tablet {
       margin: 0px 24px;
       margin-bottom: 20px;
+    }
+    @include for-desktop {
+      display: block;
+      background-color: white;
+      position: relative;
+      left: 63vw;
+      bottom: 1155px;
+      border-left: 2px solid $textFieldBorder;
+      padding-left: 20px;
+      height: 85vw;
+      padding-top: 10px;
+      width: 100px;
+      margin: 0;
+      z-index: 9;
     }
 }
 
@@ -523,6 +619,7 @@ object-fit: cover;
   width: 120px;
   height: 70px;
   object-fit: cover;
+  margin-bottom: 15px;
 }
 
 
@@ -530,7 +627,7 @@ object-fit: cover;
   margin-left: 10px;
   margin-right: 10px;
   color: $p_text;
-  width: 155px;
+  width: 80px;
 }
 
 .video__que__side--title {
@@ -548,6 +645,9 @@ object-fit: cover;
     @include for-tablet {
       font-size: 1em;
       width: 200px;
+    }
+    @include for-desktop {
+      width: 190px;
     }
 }
 
