@@ -30,9 +30,13 @@ export class App extends React.Component {
   <div>
   <Header></Header>
   <Videos currentVideo = {this.state.currentVideo} > </Videos>
+  <section className="desktop__container">
+    <div>
   <VideoDes currentVideo = {this.state.currentVideo}></VideoDes>
   <Comments currentVideo = {this.state.currentVideo} ></Comments>
+    </div>
   <VideoQue handleChange={this.handleChange.bind(this)} currentVideo={this.state.currentVideo} quedVideos= {this.state.quedVideos}></VideoQue>  
+  </section>
 </div>
       )
   }

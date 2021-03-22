@@ -181,7 +181,7 @@ height: 169px;
   }
   @include for-desktop {
     position: relative;
-    margin-right: 100px;
+    margin-right: 50px;
     left: 0;
     top: 0;
     height: 14px;
@@ -237,7 +237,7 @@ object-fit: cover;
 }
 @include for-desktop {
   width: 944px;
-  height: 540px;
+  height: 530px;
   object-fit: contain;
 }
 }
@@ -305,7 +305,7 @@ object-fit: cover;
       right: 10px;
     }
     @include for-desktop {
-      right: 210px;
+      right: 20px;
     }
 }
 
@@ -318,7 +318,7 @@ object-fit: cover;
       right: 10px;
     }
     @include for-desktop {
-      right: 210px;
+      right: 20px;
     }
 }
 
@@ -328,9 +328,8 @@ object-fit: cover;
   left: 20px;
   width: 6rem;
   @include for-desktop {
-    position: absolute;
-    left: 800px;
-    top: 717px;
+    left: 0px;
+    width: 10rem;
   }
 }
 
@@ -593,17 +592,12 @@ object-fit: cover;
       margin-bottom: 20px;
     }
     @include for-desktop {
-      display: block;
       background-color: white;
       position: relative;
-      left: 63vw;
-      bottom: 1155px;
+      right: 26vw;
+      top: 2px;
       border-left: 2px solid $textFieldBorder;
       padding-left: 20px;
-      height: 85vw;
-      padding-top: 10px;
-      width: 100px;
-      margin: 0;
       z-index: 9;
     }
 }
@@ -653,4 +647,13 @@ object-fit: cover;
 
 .video__que__side--user {
   font-size: .8em;
+}
+
+// below is styling for destop that includes the main video description, comments, and video que
+
+.desktop__container{
+  @include for-desktop {
+    display: flex;
+  }
+  
 }
