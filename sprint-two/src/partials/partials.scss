@@ -1,0 +1,90 @@
+
+// viewscreen breakpoints live here
+$mobile-breakpoint: 279px;
+$tablet-breakpoint: 720px;
+$desktop-breakpoint: 1400px;
+
+
+@mixin for-mobile {
+    @media (min-width: $mobile-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-tablet {
+    @media (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-desktop {
+    @media (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+
+@mixin displaytool($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin min-sizetool($width, $height) {
+    min-width: $width;
+    min-height: $height;
+}
+
+@mixin max-sizetool($width, $height) {
+    max-width: $width;
+    max-height: $height;
+}
+
+@mixin gallerysizes {
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('../assets/fonts/AvenirNextProLT/Linotype-AvenirNextLTPro-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('../assets/fonts/AvenirNextProLT/Linotype-AvenirNextLTPro-It.otf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('../assets/fonts/AvenirNextProLT/Linotype-AvenirNextLTPro-Bold.otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('../assets/fonts/AvenirNextProLT/Linotype-AvenirNextLTPro-BoldIt.otf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('../assets/fonts/AvenirNextProLT/Linotype-AvenirNextLTPro-Heavy.otf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:url('../assets/fonts/AvenirNextProLT/Linotype-AvenirNextLTPro-Demi.otf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+$font-stack: 'Avenir';
