@@ -1,0 +1,12 @@
+
+
+
+.Upload__form {
+width: 100%;
+margin: 0px 16px;
+    &__thumbnail{
+        width: 90%;
+        border-radius: 4px;
+        object-fit: contain;
+    }
+}

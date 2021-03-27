@@ -1,0 +1,200 @@
+@import '../../partials/partials.scss';
+@import '../../partials/colors.scss';
+
+// form section styling lives here
+
+.comment--form__fieldset {
+    border: none;
+    @include displaytool(center,center,column);
+    @include for-tablet {
+        @include displaytool(flex-start, flex-start, row);
+    }
+    @include for-desktop{
+        margin: 0 155px;
+    }
+}
+
+#comment--form__img {
+    background-image: url(../../assets/images/Mohan-muruge.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 30px;
+    right: 120px;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    @include for-tablet {
+        top: 6px;
+        right: 0;
+        left: 24px;
+    }
+}
+
+
+#comment {
+    width: 187px;
+    color: $textLabelstyle;
+    text-align: left;
+    font-size: .8em;
+    font-weight: normal;
+    letter-spacing: 1px;
+    position: relative;
+    left: 13px;
+    bottom: 40px;
+    @include for-tablet {
+        left: 40px;
+        bottom: 13px;
+    }
+}
+
+
+#textarea {
+    border-radius: 4px;
+    border: 2px solid $textFieldBorder;
+    position: relative;
+    bottom: 35px;
+    margin-left: 17vw;
+    width: 200px;
+    height: 70px;
+    padding: 12px 10px;
+    color: $p_text;
+    font-size: .9em;
+    resize: none;
+    line-height: 1.5;
+    word-wrap: wrap;
+    overflow: hidden;
+    @include for-tablet {
+        margin-left: 0px;
+        width: 440px;
+        height: 22px;
+        bottom: 0;
+        top: 6px;
+        right: 147px;
+    }
+}
+
+#textarea:focus {
+    outline: $primaryCTAhover_B;
+    border-radius: 4px;
+    border: 2px solid $primaryCTA_TextLink_B;
+    position: relative;
+    color: $p_text;
+}
+
+.comment__section--button--here {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 35px;
+    left: 11.2vw;
+    background-color: $primaryCTA_TextLink_B;
+    color: $allWhite;
+    width: 225px;
+    height: 50px;
+    border-radius: 4px;
+    margin-right: 16px;
+    font-size: 1em;
+    border: 2px solid $primaryCTA_TextLink_B;
+    border-collapse: separate;
+    overflow: hidden;
+    perspective: 1px;
+    @include for-tablet {
+        bottom: 60px;
+        left: 35vw;
+        width: 150px;
+    }
+    @include for-desktop {
+        left: 6vw;
+        font-size: .9em;
+    }
+}
+
+.comment__section--button--here:hover {
+    background-color: $primaryCTAhover_B;
+    border: 2px solid $primaryCTAhover_B;
+}
+
+.comment__section--button--here:focus {
+    outline: $primaryCTAhover_B;
+}
+
+.comment__section--button {
+    @include displaytool(center,center,column);
+    padding-top: 16px;
+}
+
+  // comments styling live here
+
+.comment__submission {
+    width: 100%;
+    margin-bottom: 40px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.comment__section2 {
+    width: 90%;
+    height: 160px;
+    border-top: 1px solid $textFieldBorder;
+    border-bottom: 1px solid $textFieldBorder;
+    padding-bottom: 24px;
+    margin-left: 16px;
+    color: $p_text;
+    font-size: .9em;
+    @include for-desktop {
+    width: 55%;
+    margin: 0px 180px;
+    }
+}
+
+.userimg {
+    position: relative;
+    top: 30px;
+    background-color: $textFieldBorder;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.comment__name {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    width: 120px;
+    left: 60px;
+    bottom: 36px;
+    padding-top: 20px;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+.comment__comment {
+    position: relative;
+    bottom: 40px;
+    left: 60px;
+    width: 75%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    font-size: 1em;
+}
+
+.comment__timestamp {
+    color: $textLabelstyle;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 53px;
+    font-weight: normal;
+    @include for-tablet {
+    justify-content: flex-start;
+    width: 50%;
+    left: 25vw;
+    }
+    @include for-desktop {
+    left: 13vw;
+    }
+}

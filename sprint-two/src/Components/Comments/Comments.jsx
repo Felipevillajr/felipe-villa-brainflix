@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-
+import '../Comments/Comments.scss';
 
 class Comments extends Component {
 
-    
+
+
 
     render() {
         function handleSubmit(e){
         e.preventDefault();
     }
+
+    
         return (
             <>
             <section className="comment__section">
@@ -28,7 +31,8 @@ class Comments extends Component {
             
         </div>
         <div id="comment__submission">
-        {this.props.currentVideo.comments.map((comment) => {
+        <>
+        {/* { this.props.currentVideo.comments.map((comment) => {
                 return (
                     <div className='comment__section2'>
                     <div className="userimg" ></div>
@@ -37,7 +41,8 @@ class Comments extends Component {
                     <div className='comment__comment'>{comment.comment}</div>
                     </div>
                 )
-            })}
+            })} */}
+    </>
         </div>
         </>
         )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../Videos/Videos.scss'
 
 export class Videos extends Component {
 

@@ -1,5 +1,6 @@
 import React from 'react'
-import Logo from '../assets/Logo/Logo-brainflix.svg'
+import Logo from '../../assets/Logo/Logo-brainflix.svg'
+import './Header.scss'
 
 function Header() {
     return (

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import ViewsIcon from '../assets/Icons/Icon-views.svg';
-import LikesIcon from '../assets/Icons/Icon-likes.svg';
+import ViewsIcon from '../../assets/Icons/Icon-views.svg';
+import LikesIcon from '../../assets/Icons/Icon-likes.svg';
+import './VideoDescrib.scss'
 
 
 
-export class VideoDescrib extends Component {
+class VideoDescrib extends Component {
     
     render() {
         
@@ -32,7 +33,7 @@ export class VideoDescrib extends Component {
                     </tr>
                 </table>
                 <div className='video__section--description'>{this.props.currentVideo.description}</div>
-                <div className='video__section--comment__count'>{this.props.currentVideo.comments.length} Comments</div>
+                {/* <div className='video__section--comment__count'>{this.props.currentVideo.comments.length} Comments</div> */}
             </div>
         )
     }

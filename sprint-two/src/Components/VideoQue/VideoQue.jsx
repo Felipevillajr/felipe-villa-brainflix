@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import '../VideoQue/VideoQue.scss'
 
 
 
 
 
 
-
-export default class VideoQue extends Component {
+class VideoQue extends Component {
     
     render() {
 
@@ -39,3 +39,5 @@ export default class VideoQue extends Component {
         )
     }
 }
+
+export default VideoQue
