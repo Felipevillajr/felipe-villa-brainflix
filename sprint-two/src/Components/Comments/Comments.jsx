@@ -10,6 +10,7 @@ class Comments extends Component {
         function handleSubmit(e){
         e.preventDefault();
     }
+    if (!this.props.currentVideo.comments) return null
 
     
         return (
@@ -32,7 +33,7 @@ class Comments extends Component {
         </div>
         <div id="comment__submission">
         <>
-        {/* { this.props.currentVideo.comments.map((comment) => {
+        {this.props.currentVideo.comments.map((comment) => {
                 return (
                     <div className='comment__section2'>
                     <div className="userimg" ></div>
@@ -41,7 +42,7 @@ class Comments extends Component {
                     <div className='comment__comment'>{comment.comment}</div>
                     </div>
                 )
-            })} */}
+            })}
     </>
         </div>
         </>

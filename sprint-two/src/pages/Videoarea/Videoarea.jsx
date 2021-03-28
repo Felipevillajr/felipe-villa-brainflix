@@ -23,9 +23,6 @@ class Videoarea extends Component {
 
     componentDidMount() {
         axios.get(urlWithId, {
-            params: {
-                _limit: 10
-            }
         })
         .then((response)=> {
             this.setState({ currentVideo: response.data});
@@ -37,25 +34,32 @@ class Videoarea extends Component {
         }).catch(console.log("axios error2"))
     }
     
-
-    handleChange = (e, index) => {
-        this.setState({
-            currentVideo: e, index,
-        })
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props !== prevProps) {
+            let videoId = `https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}?api_key=3D3De7d88376-4c43-4051-a225-c6e026228e2a`;
+            axios.get(videoId)
+            .then((response) => {
+                this.setState({currentVideo: response.data});
+            })
+        }
     }
+    
     render(){
         return (
+            <>
+            {this.state.currentVideo &&
             <div>
-                {/* {this.state.currentVideo && this.state.videoque} */}
                 <Videos currentVideo = {this.state.currentVideo} > </Videos>
                 <section className="desktop__container">
                     <div>
                         <VideoDes quedVideos = {this.state.quedVideos} currentVideo = {this.state.currentVideo}></VideoDes>
                         <Comments currentVideo = {this.state.currentVideo} ></Comments>
                     </div>
-                    <VideoQue handleChange={this.handleChange.bind(this)} currentVideo={this.state.currentVideo} quedVideos= {this.state.quedVideos}></VideoQue>  
+                    <VideoQue  currentVideo={this.state.currentVideo} quedVideos= {this.state.quedVideos} matchProps={this.props.match.params.id}></VideoQue>  
                 </section>
             </div>
+            }
+            </>
     )
     }
 

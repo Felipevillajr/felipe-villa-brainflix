@@ -3,8 +3,8 @@ import './App.scss';
 import React from "react";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from './Components/Header/Header';
-import Home from './pages/Videoarea/Videoarea'
-import Upload from './pages/Upload/Upload'
+import Home from './pages/Videoarea/Videoarea';
+import Upload from './pages/Upload/Upload';
 
 
 
@@ -16,9 +16,12 @@ render() {
   <Router>
     <Header/>
     <Switch>
-        <Route path="/" exact component={Home}/>
-        <Route path='/upload' exact component={Upload}/>
-        <Route path='/videos/:id' component={Home}/>
+        <Route path="/" exact component={Home}>
+        </Route>
+        <Route path='/upload' exact component={Upload}>
+        </Route>
+        <Route path='/videos/:id' render={(routeProps) => <Home {...routeProps} />} exact component={Home}>
+        </Route>
     </Switch>
   </Router>
     )
