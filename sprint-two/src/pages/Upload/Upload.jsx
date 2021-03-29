@@ -19,7 +19,7 @@ class Upload extends Component {
         return (
             <div className='upload__section'>
             <h1 className='upload__section__title'>Upload Video</h1>
-            <p>VIDEO THUMBNAIL</p>
+            <p className='upload__section__title--thumbnail'>VIDEO THUMBNAIL</p>
             <img className='upload__section__thumbnail' src={Thumbnail} alt='Video Thumnail'/>
                 <form className='upload__form'>
                     <p className="upload__form--title">TITLE YOUR VIDEO</p>
@@ -27,19 +27,23 @@ class Upload extends Component {
                     type="text" 
                     id="title" 
                     name="title"
+                    placeholder='Add a title to your video'
                     onChange={this.state.title}
                     />
                     <p className="upload__form--description"> ADD A VIDEO DESCRIPTION</p>
-                    <input 
-                    type="text" 
+                    <textarea 
+                    type="textarea" 
                     id="description" 
                     name="description"
+                    placeholder="Add a description of your video"
                     onChange={this.state.description}
                     />
+                    <div className="upload__form--border_top">
                     <Link to={`/`}>
                     <button className="upload__form--publish" type="button" onClick={()=> this.uploadHandler() }>PUBLISH</button>
                     </Link>
                     <button className="upload__form--cancel" type='button'>CANCEL</button>
+                    </div>
                 </form>
             </div>
         )
