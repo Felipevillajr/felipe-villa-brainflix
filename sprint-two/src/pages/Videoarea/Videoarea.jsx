@@ -3,7 +3,6 @@ import Videos from '../../Components/Videos/Videos';
 import VideoDes from '../../Components/VideoDescrib/VideoDescrib';
 import Comments from '../../Components/Comments/Comments';
 import VideoQue from '../../Components/VideoQue/VideoQue'
-// import VideoDetails from '../../assets/Data/video-details.json';
 import axios from 'axios'
 
 const key = '3D3De7d88376-4c43-4051-a225-c6e026228e2a';
@@ -26,23 +25,32 @@ class Videoarea extends Component {
         })
         .then((response)=> {
             this.setState({ currentVideo: response.data});
-        }).catch(console.log("axios error"))
+        }).catch("axios error")
 
         axios.get(url)
         .then((response)=> {
             this.setState({ quedVideos: response.data });
-        }).catch(console.log("axios error2"))
+        }).catch("axios error2")
     }
     
     componentDidUpdate(prevProps, prevState) {
-        if (this.props !== prevProps) {
+        if (this.props !== prevProps && this.props.match.params.id !== undefined) {
             let videoId = `https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}?api_key=3D3De7d88376-4c43-4051-a225-c6e026228e2a`;
             axios.get(videoId)
             .then((response) => {
                 this.setState({currentVideo: response.data});
+                
+            }).catch('axios error4')
+        }
+        else if (this.props.match.params.id === undefined && this.props !== prevProps)  {
+            axios.get(urlWithId, {
             })
+            .then((response)=> {
+                this.setState({ currentVideo: response.data});
+            }).catch("axios error3")
         }
     }
+
     
     render(){
         return (

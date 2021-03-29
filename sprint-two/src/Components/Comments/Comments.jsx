@@ -3,9 +3,6 @@ import '../Comments/Comments.scss';
 
 class Comments extends Component {
 
-
-
-
     render() {
         function handleSubmit(e){
         e.preventDefault();

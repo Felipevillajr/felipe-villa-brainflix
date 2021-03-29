@@ -25,7 +25,7 @@ class VideoQue extends Component {
                 return (
                     
                     <table>
-                        <tr className='video__que__lineup' id= {videoQue.id}>
+                        <tr className='video__que__lineup' id= {videoQue.id} key={index}>
                             <td>
                                 <Link to={`/videos/${videoQue.id}`} key={videoQue.id}>
                                 <img className='video__que__thumb' src={videoQue.image} alt={videoQue.title}/>

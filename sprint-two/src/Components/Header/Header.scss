@@ -24,8 +24,7 @@
         padding: 10px 0px;
     
         @include for-tablet {
-        position: relative;
-        right: 31vw;
+        @include displaytool(flex-start,center,row);
         width: 200px;
         padding: 0px;
         }

@@ -1,12 +1,57 @@
+@import '../../partials/colors.scss';
+@import '../../partials/partials.scss';
 
 
 
-.Upload__form {
-width: 100%;
+.upload__section {
+@include displaytool(center,flex-start,column);
+box-sizing: border-box;
+width: 90%;
 margin: 0px 16px;
     &__thumbnail{
-        width: 90%;
+        width: 100%;
         border-radius: 4px;
         object-fit: contain;
     }
+}
+
+
+
+.upload__form {
+    @include displaytool(center, flex-start, column);
+    width: 100%;
+
+    &--publish{
+        width: 100%;
+        height: 48px;
+        margin-top: 8px;
+        background-color: $primaryCTA_TextLink_B;
+        border: 0px;
+        border-radius: 4px;
+        padding-left: 27px;
+        font-weight: normal;
+        color: $allWhite;
+        font-size: 1em;
+    }
+}
+
+// .upload__form--cancel {
+//     width: 100%;
+//     height: 48px;
+//     margin-top: 8px;
+//     background-color: $primaryCTA_TextLink_B;
+//     border: 0px;
+//     border-radius: 4px;
+//     padding-left: 27px;
+//     font-weight: normal;
+//     color: $allWhite;
+//     font-size: 1em;
+// }
+
+.upload__form--publish:focus,.upload__form--cancel:focus {
+outline: none;
+}
+
+.upload__form--publish:hover, .upload__form--cancel:hover {
+background-color: $primaryCTAhover;
 }

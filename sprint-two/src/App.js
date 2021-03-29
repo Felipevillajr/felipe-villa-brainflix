@@ -20,7 +20,7 @@ render() {
         </Route>
         <Route path='/upload' exact component={Upload}>
         </Route>
-        <Route path='/videos/:id' render={(routeProps) => <Home {...routeProps} />} exact component={Home}>
+        <Route path='/videos/:id' exact component={Home}>
         </Route>
     </Switch>
   </Router>
