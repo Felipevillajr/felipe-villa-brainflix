@@ -1,0 +1,25 @@
+@import './partials/partials.scss';
+@import './partials/colors.scss';
+
+* {
+  font-family: $font-stack;
+  margin: 0;
+  padding: 0;
+}
+
+
+.App {
+  text-align: center;
+}
+
+
+
+
+// below is styling for destop that includes the main video description, comments, and video que
+
+.desktop__container{
+  @include for-desktop {
+    display: flex;
+  }
+  
+}

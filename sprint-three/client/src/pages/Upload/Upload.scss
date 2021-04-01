@@ -1,0 +1,237 @@
+@import '../../partials/colors.scss';
+@import '../../partials/partials.scss';
+
+
+
+.upload__section {
+    @include displaytool(flex-start,flex-start,column);
+    width: 90%;
+
+    @include for-desktop {
+        width: 70%;
+        margin: 0px 180px;
+
+    }
+    &__thumbnail{
+        width: 100%;
+        border-radius: 4px;
+        object-fit: contain;
+        @include for-tablet {
+            width: 55%;
+            margin-left: 1rem;
+        }
+        @include for-desktop {
+            width: 300px;
+        }
+    }
+}
+
+.upload__section__title {
+    width: 105%;
+    margin-top: .5rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    color: p_text;
+    @include for-tablet {
+        width: 105%;
+        font-size: 2.6rem;
+        margin-top: 0px;
+        margin-left: 1.5rem;
+        padding-bottom: 2rem;
+        padding-left: 0rem;
+        border-bottom: 2px solid $textFieldBorder;
+    }
+}
+
+.upload__section__title--thumbnail {
+    color: $textLabelstyle;
+    font-weight: 300;
+    padding-left: 1rem;
+    font-size: .78rem;
+    @include for-tablet {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        font-weight: normal;
+    }
+    @include for-desktop {
+
+    }
+}
+
+.upload__section__thumbnail {
+    padding-left: 1rem;
+    margin-top: .2rem;
+    @include for-tablet {
+        margin-left: 1rem;
+        font-weight: normal;
+    }
+}
+
+.upload__form--title {
+    color: $textLabelstyle;
+    font-weight: 300;
+    padding-left: 1rem;
+    margin-top: 2rem;
+    font-size: .78rem;
+    margin-bottom: .2rem;
+    @include for-tablet {
+        margin-left: 1rem;
+        font-weight: normal;
+    }
+}
+
+#title {
+    margin-left: 1rem;
+    width: 94%;
+    height: 2.5rem;
+    margin-bottom: 2rem;
+    border: 2px solid $textFieldBorder;
+    border-radius: 4px;
+    padding-left: 1rem;
+    @include for-tablet {
+        width: 99%;
+        margin-left: 2rem;
+        font-weight: normal;
+    }
+
+    @include for-desktop {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+}
+
+#title:focus {
+    outline: none;
+}
+
+.upload__form--description {
+    color: $textLabelstyle;
+    font-weight: 300;
+    padding-left: 1rem;
+    font-size: .78rem;
+    margin-bottom: .2rem;
+    @include for-tablet {
+        margin-left: 1rem;
+        font-weight: normal;
+    }
+}
+
+#description {
+    margin-left: 1rem;
+    width: 94%;
+    height: 6rem;
+    margin-bottom: 2rem;
+    border: 2px solid $textFieldBorder;
+    border-radius: 4px;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    resize: none;
+    @include for-tablet {
+        width: 99%;
+        margin-left: 2rem;
+        font-weight: normal;
+    }
+
+    @include for-desktop {
+        width: 90%;
+        height: 4rem;
+    }
+}
+
+#description:focus {
+    outline: none;
+}
+
+.upload__form--border_top {
+@include for-tablet {
+    display: flex;
+    position: absolute;
+    border-top: 2px solid $textFieldBorder;
+    height: 200px;
+    width: 95%;
+    top: 100vw;
+    left: 1rem;
+    padding-top: 2rem;
+}
+@include for-desktop {
+    width: 70%;
+    top: 29rem;
+    left: 16rem;
+    padding-top: 2rem;
+}
+}
+
+.upload__form--textareas {
+width: 100%;
+@include for-tablet {
+    position: static;
+}
+@include for-desktop {
+    width: 55%;
+    position: absolute;
+    left: 31rem;
+    top: 14rem;
+}
+}
+
+.upload__form {
+    @include displaytool(center, flex-start, column);
+    width: 100%;
+
+    &--publish{
+        width: 18rem;
+        height: 48px;
+        margin-top: 8px;
+        margin-left: 1rem;
+        background-color: $primaryCTA_TextLink_B;
+        border: 0px;
+        border-radius: 4px;
+        font-weight: normal;
+        color: $allWhite;
+        font-size: 1em;
+        @include for-tablet {
+            width: 9rem;
+            position: relative;
+            left: 35rem;
+        }
+        @include for-desktop {
+            left: 53rem;
+        }
+    }
+
+    &--cancel {
+        width: 100%;
+        height: 48px;
+        margin-left: 1rem;
+        margin-top: 8px;
+        margin-bottom: 1rem;
+        background-color: $alabaster;
+        border: 0px;
+        border-radius: 4px;
+        font-weight: 300;
+        color: $brainflixBlue;
+        font-size: 1em;
+        @include for-tablet {
+            width: 9rem;
+            position: relative;
+            left: 15rem;
+        }
+        @include for-desktop {
+            left: 32rem;
+        }
+    }
+}
+
+.upload__form--cancel:focus,.upload__form--publish:focus {
+outline: none;
+}
+
+.upload__form--publish:hover, .upload__form--cancel:hover {
+background-color: $primaryCTAhover;
+}

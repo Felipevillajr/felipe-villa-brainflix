@@ -1,0 +1,142 @@
+@import '../../partials/partials.scss';
+@import '../../partials/colors.scss';
+
+// Active Description lives here 
+
+
+
+.video__section--table {
+    @include displaytool(flex-start,flex-start, column);
+    width: 100%;
+    text-align: left;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid $textFieldBorder;
+    @include for-tablet {
+        @include displaytool(space-between, center, row);
+        padding-bottom: 10px;
+    }
+}
+
+.video__section {
+    margin: 0 16px;
+    @include for-tablet {
+    margin: 0 24px;
+    }
+    @include for-desktop {
+    width: 55%;
+    margin: 0 180px;
+    }
+
+    &--title {
+    color: $p_text;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    @include for-tablet {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        font-size: 2.3em;
+    }
+    }
+
+    &--user__name {
+    color: $p_text;
+    font-size: 1em;
+    font-weight: 300;
+    width: 6rem;
+    }
+
+    &--date {
+    font-size: 1em;
+    color: $textLabelstyle;
+    }
+
+    &--views__container {
+    width: 6rem;
+}
+}
+
+#views__img {
+    position: relative;
+    top: 20px;
+    @include for-tablet {
+        top: 5px;
+        right: 10px;
+    }
+    @include for-desktop {
+        right: 20px;
+    }
+}
+
+.video__section--views {
+    margin-left: 2rem;
+    font-size: .9rem;
+    @include for-tablet{
+        position: relative;
+        bottom: 17px;
+        right: 10px;
+    }
+    @include for-desktop {
+        right: 20px;
+    }
+}
+
+.video__section--likes__container {
+    position: relative;
+    left: 20px;
+    width: 6rem;
+    @include for-desktop {
+    left: 0px;
+    width: 10rem;
+    }
+}
+
+.video__section--likes {
+    margin-left: 2rem;
+    font-size: .9rem;
+    @include for-tablet{
+    position: relative;
+    bottom: 17px;
+    right: 10px;
+    }
+}
+
+#likes__img {
+    position: relative;
+    top: 20px;
+    left: 8px;
+    @include for-tablet{
+    top: 4px;
+    left: 0;
+    right: 25px;
+    }
+    @include for-desktop {
+    margin-right: 0px;
+    }
+}
+
+
+.video__section--description {
+    color: $p_text;
+    font-size: .75em;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    width: 287px;
+
+    @include for-tablet {
+    width: 499px;
+    font-size: 1em;
+    margin-bottom: 60px;
+    margin-top: 40px;
+    }
+}
+
+.video__section--comment__count {
+    color: $p_text;
+    font-weight: 300;
+    margin-bottom: 32px;
+    @include for-tablet {
+    margin-bottom: 42px;
+    font-size: 1.2em;
+    }
+}
