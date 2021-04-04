@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
-const PORT = 8081;
+const PORT = process.env.port || 8081;
 const cors = require("cors");
 const fs = require("fs");
 const videoDetails = require("./data/video-details.json");
 
-app.use("/static", express.static("public"));
+app.use("/static", express.static("public/images"));
+// app.use("/static", express.static(path.join(__dirname, "public")));
+
 app.use(cors());
 
 app.use(express.json());
@@ -17,7 +19,7 @@ app.get("/", (req, res) => {
 app.get("/videos", (req, res) => {
   res.send(
     videoDetails.map((data) => {
-      return data.video;
+      return data;
     })
   );
 });
@@ -60,8 +62,6 @@ app.post("/videos", (req, res) => {
     if (err) {
       console.log("error reading file");
     } else {
-      // const newerVideo = JSON.stringify(newVideo)
-      // const infoCombine = [data, newerVideo].join() ;
       const parseMe = JSON.parse(data);
       parseMe.push(newVideo);
       const database = JSON.stringify(parseMe);
@@ -71,12 +71,10 @@ app.post("/videos", (req, res) => {
           console.log(`error in writing file ${err}`);
         } else {
           console.log("writing successful");
-          // return JSON.parse(database)
         }
       });
     }
   });
-  // res.send(alert('video was uploaded'));
   res.send(newVideo);
 });
 
