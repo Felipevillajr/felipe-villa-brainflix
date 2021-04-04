@@ -6,16 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\"",
-    "client":"cd client && npm run start"
+    "client": "cd client && npm run start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^6.0.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "fs": "^0.0.1-security",
     "nodemon": "^2.0.7"
   }
 }
