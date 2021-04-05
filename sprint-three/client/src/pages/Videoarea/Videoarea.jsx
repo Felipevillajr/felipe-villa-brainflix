@@ -62,7 +62,7 @@ class Videoarea extends Component {
           <div>
             <Videos currentVideo={this.state.currentVideo}> </Videos>
             <section className="desktop__container">
-              <div>
+              <div className="desktop__container__width">
                 <VideoDes
                   quedVideos={this.state.quedVideos}
                   currentVideo={this.state.currentVideo}

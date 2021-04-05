@@ -1,27 +1,30 @@
-@import '../../partials/partials.scss';
-@import '../../partials/colors.scss';
+@import "../../partials/partials.scss";
+@import "../../partials/colors.scss";
 
 // video section
-
+body {
+  max-width: 1400px;
+  min-width: 311px;
+}
 
 .video__player {
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  width: 100%;
 }
 
 #video__player--bg {
-width: 100%;
-height: 70vw;
-object-fit: cover;
-@include for-tablet {
+  width: 100%;
+  height: 70vw;
+  object-fit: cover;
+  @include for-tablet {
     width: 700px;
     height: 400px;
-}
-@include for-desktop {
+  }
+  @include for-desktop {
     width: 944px;
     height: 530px;
     object-fit: contain;
-}
+  }
 }

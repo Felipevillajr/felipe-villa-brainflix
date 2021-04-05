@@ -10,9 +10,9 @@ class Comments extends Component {
     return (
       <>
         <section className="comment__section">
-          <form id="commentForm" className="comment--form">
-            <fieldset className="comment--form__fieldset">
-              <div id="comment--form__img"></div>
+          <form id="commentForm" className="comment__form">
+            <fieldset className="comment__form__fieldset">
+              <div id="comment__form__img"></div>
               <div id="comment" for="commentText">
                 JOIN THE CONVERSATION
               </div>

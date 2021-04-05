@@ -1,5 +1,5 @@
-@import './partials/partials.scss';
-@import './partials/colors.scss';
+@import "./partials/partials.scss";
+@import "./partials/colors.scss";
 
 * {
   font-family: $font-stack;
@@ -7,19 +7,23 @@
   padding: 0;
 }
 
+body {
+  max-width: 1400px;
+  min-width: 311px;
+}
+
+textarea {
+  background-color: whitesmoke;
+}
 
 .App {
   text-align: center;
 }
 
-
-
-
 // below is styling for destop that includes the main video description, comments, and video que
 
-.desktop__container{
+.desktop__container {
   @include for-desktop {
     display: flex;
   }
-  
 }
