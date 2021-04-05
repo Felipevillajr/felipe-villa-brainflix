@@ -35,6 +35,11 @@ a {
       @include displaytool(flex-start, center, row);
       padding: 0;
       position: relative;
+      left: 1rem;
+    }
+    @include for-desktop {
+      padding: 0;
+      position: relative;
       left: 10rem;
     }
   }
@@ -210,8 +215,10 @@ a {
 // user image lives here
 
 .header__user {
-  position: relative;
-  right: 10rem;
+  @include for-desktop {
+    position: relative;
+    right: 10rem;
+  }
 }
 
 .header__user--img {
@@ -223,7 +230,7 @@ a {
   border-radius: 100%;
   position: absolute;
   left: 257px;
-  top: 112px;
+  top: 7rem;
   @include for-tablet {
     margin-left: 0;
     position: static;
